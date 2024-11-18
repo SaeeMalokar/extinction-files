@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extinction of Marsupials</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .search-container {
+            margin-top: 20px;
+            text-align: right;
+        }
+        #searchInput {
+            padding: 8px;
+            font-size: 16px;
+            width: 200px;
+        }
+        #searchButton {
+            padding: 8px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #searchButton:hover {
+            background-color: #45a049;
+        }
+        .search-results {
+            margin-top: 20px;
+            color: black;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        #photoDisplay {
+            margin-top: 30px;
+            text-align: center;
+        }
+        #photoDisplay img {
+            max-width: 80%;
+            height: auto;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Extinction of Marsupials</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="mammals.html">Mammals</a></li>
+                <li><a href="amphibians.html">Amphibians</a></li>
+                <li><a href="echinoderms.html">Echinoderms</a></li>
+                <li><a href="invertebrates.html">Invertebrates</a></li>
+            </ul>
+        </nav>
+
+        <!-- Search bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
+            <button id="searchButton">Search</button>
+        </div>
+
+        <!-- Search results -->
+        <div class="search-results" id="searchResults"></div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Overview of Extinct Marsupials</h2>
+            <p>Marsupials, including kangaroos, koalas, and wombats, are a diverse group of mammals primarily found in Australia and nearby islands. Due to habitat destruction, climate change, and human interference, many marsupial species have gone extinct. Their extinction has significant ecological consequences.</p>
+        </section>
+        
+        <section>
+            <h3>Examples of Extinct Marsupials</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Marsupial Name</th>
+                        <th>Scientific Name</th>
+                        <th>Category</th>
+                        <th>Conservation Status</th>
+                        <th>Estimated Risk of Extinction (%)</th>
+                        <th>Comfortable Habitat</th>
+                        <th>Original Home Area</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#" onclick="showPhoto('images/thylacine.jpg')">Thylacine</a></td>
+                        <td>Thylacinus cynocephalus</td>
+                        <td>Marsupial</td>
+                        <td>Extinct</td>
+                        <td>100%</td>
+                        <td>Forest, Grasslands</td>
+                        <td>Tasmania, Australia</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#" onclick="showPhoto('images/bolam_rock_wallaby.jpg')">Bolam's Rock Wallaby</a></td>
+                        <td>Petrogale bolami</td>
+                        <td>Marsupial</td>
+                        <td>Extinct</td>
+                        <td>90%</td>
+                        <td>Rocky Scrublands</td>
+                        <td>Queensland, Australia</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#" onclick="showPhoto('images/short-tailed_rock_wallaby.jpg')">Short-tailed Rock Wallaby</a></td>
+                        <td>Petrogale brachyotis</td>
+                        <td>Marsupial</td>
+                        <td>Extinct</td>
+                        <td>95%</td>
+                        <td>Rocky Mountain Areas</td>
+                        <td>Western Australia</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#" onclick="showPhoto('images/giant_cuscus.jpg')">Giant Cuscus</a></td>
+                        <td>Phalanger orientalis</td>
+                        <td>Marsupial</td>
+                        <td>Extinct</td>
+                        <td>85%</td>
+                        <td>Rainforests</td>
+                        <td>New Guinea</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Display selected photo -->
+        <div id="photoDisplay">
+            <p>Click on a marsupial name to view its photo.</p>
+            <img id="animalPhoto" src="" alt="Selected Marsupial Photo">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Extinct Animals</p>
+    </footer>
+
+    <script>
+        // Sample marsupial data for search functionality
+        const marsupials = [
+            { name: "Thylacine", link: "#" },
+            { name: "Bolam's Rock Wallaby", link: "#" },
+            { name: "Short-tailed Rock Wallaby", link: "#" },
+            { name: "Giant Cuscus", link: "#" }
+        ];
+
+        // Search function for marsupials
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const results = marsupials.filter(marsupial => marsupial.name.toLowerCase().includes(input));
+            displayResults(results);
+        });
+
+        // Function to display search results
+        function displayResults(results) {
+            const resultsContainer = document.getElementById('searchResults');
+            resultsContainer.innerHTML = ''; // Clear previous results
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<p>No results found.</p>';
+            } else {
+                results.forEach(marsupial => {
+                    const link = document.createElement('a');
+                    link.href = "#";
+                    link.textContent = marsupial.name;
+                    resultsContainer.appendChild(link);
+                    resultsContainer.appendChild(document.createElement('br')); // Line break
+                });
+            }
+        }
+
+        // Function to display selected photo
+        function showPhoto(src) {
+            const photoElement = document.getElementById('animalPhoto');
+            photoElement.src = src;
+            photoElement.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

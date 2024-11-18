@@ -1,0 +1,220 @@
+
+
+
+
+
+
+You said:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extinction of Mammals</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .search-container {
+            margin-top: 20px;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        #searchInput {
+            padding: 10px;
+            font-size: 16px;
+            width: 220px;
+            margin-right: 10px;
+        }
+        #searchButton {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #searchButton:hover {
+            background-color: #45a049;
+        }
+        .search-results {
+            margin-top: 20px;
+            color: black;
+            margin-bottom: 20px;
+        }
+        main {
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            border: 1px solid #ddd;
+            overflow: auto;
+            max-height: 400px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .fun-facts {
+            font-weight: bold;
+            margin: 30px 0;
+        }
+        #animalPhoto {
+            display: none;
+            max-width: 100%;
+            margin-top: 20px;
+        }
+        #animalInfo {
+            display: none;
+            margin-top: 10px;
+            font-size: 16px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Extinction of Mammals</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="reptiles.html">Reptiles</a></li>
+                <li><a href="mammals.html">Mammals</a></li>
+                <li><a href="amphibians.html">Amphibians</a></li>
+                <li><a href="aerial.html">Aerial Animals</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
+            <button id="searchButton">Search</button>
+        </div>
+
+        <div class="search-results" id="searchResults"></div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Fun Facts about Mammals</h2>
+            <p class="fun-facts">
+                Mammals are warm-blooded animals, and most give birth to live young rather than laying eggs. Some, like whales, live in the water but breathe air through lungs.
+            </p>
+        </section>
+
+        <section>
+            <h3>Examples of Extinct and Endangered Mammals</h3>
+            <table id="mammalTable">
+                <tr>
+                    <th>Original Name</th>
+                    <th>Scientific Name</th>
+                    <th>Category</th>
+                    <th>Conservation Status</th>
+                    <th>Estimated Risk of Extinction (%)</th>
+                    <th>Comfortable Habitat</th>
+                    <th>Original Home Area</th>
+                </tr>
+                <tr>
+                    <td><a href="#" class="animal-link" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdYsjfBl8sYtNPGRpkzYH3vVjZJ8H_KmPQlA&s" data-info="Javan Rhino (Rhinoceros sondaicus)
+                        The Javan rhino, once found across Southeast Asia, is now critically endangered, with only about 75 individuals remaining, all of which are confined to Ujung Kulon National Park in Java, Indonesia. This rhino species faces a 99% risk of extinction due to habitat destruction from human activities such as agriculture, infrastructure development, and illegal hunting for their horns. The Javan rhino once roamed across a wider range of Southeast Asia, but as their habitats shrank, so did their numbers. The remaining population in Ujung Kulon is particularly vulnerable to natural disasters, disease outbreaks, and poaching. Conservation efforts are focused on protecting the Javan rhino's isolated habitat, monitoring their health, and ensuring that the park remains free from human encroachment and poaching threats. If these efforts are successful, they may be able to stabilize the population, but the species remains on the brink of extinction.">Javan Rhino</a></td>
+                    <td>Rhinoceros sondaicus</td>
+                    <td>Mammal</td>
+                    <td>Critically Endangered</td>
+                    <td>99%</td>
+                    <td>Tropical forests</td>
+                    <td>Indonesia</td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="animal-link" data-image="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRg2my9jr7y0fXxoDV28L-fsQ9yCBnFK5tn4YxZa2IJ-qs7NdxFz34qPZ5Llyj2IlG52vc4TD_SNTCbomvY2GpHhkZMY7TKyV24dJMc8ao" data-info="The Vaquita, found in the Gulf of California, is the most endangered marine mammal.">Vaquita</a></td>
+                    <td>Phocoena sinus</td>
+                    <td>Mammal</td>
+                    <td>Critically Endangered</td>
+                    <td>98%</td>
+                    <td>Marine</td>
+                    <td>Gulf of California, Mexico</td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="animal-link" data-image="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTgEAqkxIb2JZeDhfz1-MaQO9oNTK_4f07mrXTDE3bYOSw7nYth" data-info="The Sumatran Tiger is the smallest surviving tiger subspecies, native to the island of Sumatra.">Sumatran Tiger</a></td>
+                    <td>Panthera tigris sumatrae</td>
+                    <td>Mammal</td>
+                    <td>Critically Endangered</td>
+                    <td>90%</td>
+                    <td>Tropical forests</td>
+                    <td>Sumatra, Indonesia</td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="animal-link" data-image="https://static.inaturalist.org/photos/194385336/large.jpg" data-info="The Blue Whale is the largest animal ever known to have lived on Earth.">Blue Whale</a></td>
+                    <td>Balaenoptera musculus</td>
+                    <td>Mammal</td>
+                    <td>Endangered</td>
+                    <td>70%</td>
+                    <td>Oceans</td>
+                    <td>Worldwide</td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="animal-link" data-image="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSafZNnc7Sycka9JxyydriqRCxna6yeF3xE6whdMONA8eUjSTnB" data-info="The Giant Panda is known for its distinct black and white appearance and its dependence on bamboo forests.">Giant Panda</a></td>
+                    <td>Ailuropoda melanoleuca</td>
+                    <td>Mammal</td>
+                    <td>Vulnerable</td>
+                    <td>40%</td>
+                    <td>Bamboo forests</td>
+                    <td>China</td>
+                </tr>
+                <!-- Add more animals here -->
+            </table>
+        </section>
+
+        <img id="animalPhoto" src="" alt="Animal Photo">
+        <p id="animalInfo"></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Extinct Animals</p>
+    </footer>
+
+    <script>
+        const animalLinks = document.querySelectorAll('.animal-link');
+        const animalPhoto = document.getElementById('animalPhoto');
+        const animalInfo = document.getElementById('animalInfo');
+
+        animalLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const imageUrl = this.getAttribute('data-image');
+                const info = this.getAttribute('data-info');
+                animalPhoto.src = imageUrl;
+                animalPhoto.style.display = 'block';
+                animalInfo.textContent = info;
+                animalInfo.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>

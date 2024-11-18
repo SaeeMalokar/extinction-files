@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extinction of Aerial Animals</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic styling */
+        .search-container {
+            margin-top: 20px;
+            text-align: right;
+        }
+        #searchInput {
+            padding: 8px;
+            font-size: 16px;
+            width: 200px;
+        }
+        #searchButton {
+            padding: 8px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #searchButton:hover {
+            background-color: #45a049;
+        }
+        .search-results {
+            margin-top: 20px;
+            color: black;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        /* Styling for the displayed image */
+        #animalImageContainer {
+            margin-top: 20px;
+            text-align: center;
+        }
+        #animalImage {
+            max-width: 300px;
+            max-height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Extinction of Aerial Animals</h1>
+        <nav>
+            <ul><li><a href="index.html">Home</a></li>
+                <li><a href="mammals.html">Mammals</a></li>
+                <li><a href="reptiles.html">Reptiles</a></li>
+                <li><a href="amphibians.html">Amphibians</a></li>
+                <li><a href="marsupials.html">Marsupials</a></li>
+            </ul>
+        </nav>
+
+        <!-- Search bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
+            <button id="searchButton">Search</button>
+        </div>
+
+        <!-- Search results -->
+        <div class="search-results" id="searchResults"></div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Overview of Extinct Aerial Animals</h2>
+            <p>Many aerial species, including birds and flying mammals, have become extinct due to hunting, habitat destruction, and climate change. Loss of these species disrupts ecosystems and reduces biodiversity, impacting the balance of nature.</p>
+        </section>
+
+        <section>
+            <h3>Why Are Aerial Animals Going Extinct?</h3>
+            <p>Human activities such as deforestation, pollution, and hunting have led to the extinction of many species. These activities not only destroy natural habitats but also disrupt the food chain, making it difficult for aerial animals to survive.</p>
+        </section>
+
+        <section>
+            <h3>Did You Know?</h3>
+            <ul>
+                <li>The Passenger Pigeon, once numbering in the billions, became extinct in 1914 due to overhunting and habitat loss.</li>
+                <li>The Dodo, native to Mauritius, went extinct in the 17th century after humans and introduced species overexploited the population.</li>
+                <li>Many species of parrots are at risk due to illegal wildlife trade and deforestation.</li>
+            </ul>
+        </section>
+
+        <!-- Table for detailed information -->
+        <section>
+            <h3>Details of Extinct Aerial Animals</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Original Name</th>
+                        <th>Scientific Name</th>
+                        <th>Category</th>
+                        <th>Conservation Status</th>
+                        <th>Estimated Risk of Extinction (%)</th>
+                        <th>Comfortable Habitat</th>
+                        <th>Original Home Area</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#" onclick="showImage('Dodo')">Dodo</a></td>
+                        <td>Raphus cucullatus</td>
+                        <td>Bird</td>
+                        <td>Extinct</td>
+                        <td>100%</td>
+                        <td>Woodland, tropical forests</td>
+                        <td>Mauritius, Indian Ocean</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#" onclick="showImage('Passenger Pigeon')">Passenger Pigeon</a></td>
+                        <td>Ectopistes migratorius</td>
+                        <td>Bird</td>
+                        <td>Extinct</td>
+                        <td>100%</td>
+                        <td>Forests, open woodlands</td>
+                        <td>North America</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#" onclick="showImage('Great Auk')">Great Auk</a></td>
+                        <td>Pinguinus impennis</td>
+                        <td>Bird</td>
+                        <td>Extinct</td>
+                        <td>100%</td>
+                        <td>Coastal cliffs</td>
+                        <td>North Atlantic, Iceland, Canada</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#" onclick="showImage('Carolina Parakeet')">Carolina Parakeet</a></td>
+                        <td>Conuropsis carolinensis</td>
+                        <td>Bird</td>
+                        <td>Extinct</td>
+                        <td>100%</td>
+                        <td>Swamps, forests</td>
+                        <td>Eastern United States</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Container for displaying the animal image -->
+        <div id="animalImageContainer">
+            <img id="animalImage" src="" alt="" style="display:none;">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Extinct Animals</p>
+    </footer>
+
+    <script>
+        // Animal data with image links
+        const aerialAnimals = [
+            { name: "Dodo", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaDJNhmuL4l85kNUmz89a_AQU8iPHhPjL0ZA&s", scientificName: "Raphus cucullatus", category: "Bird", conservationStatus: "Extinct", risk: "100%", habitat: "Woodland, tropical forests", home: "Mauritius, Indian Ocean" },
+            { name: "Passenger Pigeon", img: "data:image/jpeg;base64,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", scientificName: "Ectopistes migratorius", category: "Bird", conservationStatus: "Extinct", risk: "100%", habitat: "Forests, open woodlands", home: "North America" },
+            { name: "Great Auk", img: "data:image/webp;base64,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", scientificName: "Pinguinus impennis", category: "Bird", conservationStatus: "Extinct", risk: "100%", habitat: "Coastal cliffs", home: "North Atlantic, Iceland, Canada" },
+            { name: "Carolina Parakeet", img: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSxIq9FNWcF6qT1g_clWRhi_zydeaSedJG1jObVh90_GYnRJlzW", scientificName: "Conuropsis carolinensis", category: "Bird", conservationStatus: "Extinct", risk: "100%", habitat: "Swamps, forests", home: "Eastern United States" }
+        ];
+
+        // Search function
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const results = aerialAnimals.filter(animal => animal.name.toLowerCase().includes(input));
+            displayResults(results);
+        });
+
+        // Function to display search results
+        function displayResults(results) {
+            const resultsContainer = document.getElementById('searchResults');
+            resultsContainer.innerHTML = ''; // Clear previous results
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<p>No results found.</p>';
+            } else {
+                results.forEach(animal => {
+                    const link = document.createElement('a');
+                    link.href = "#";
+                    link.textContent = animal.name;
+                    link.onclick = function() {
+                        showImage(animal.name);
+                        return false;
+                    };
+                    resultsContainer.appendChild(link);
+                    resultsContainer.appendChild(document.createElement('br')); // Line break
+                });
+            }
+        }
+
+        // Function to show the image of the selected animal
+        function showImage(animalName) {
+            const animal = aerialAnimals.find(a => a.name === animalName);
+            if (animal) {
+                const imgElement = document.getElementById('animalImage');
+                imgElement.src = animal.img;
+                imgElement.alt = animal.name;
+                imgElement.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

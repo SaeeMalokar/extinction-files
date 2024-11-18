@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extinction of Reptiles</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .search-container {
+            margin-top: 20px;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        #searchInput {
+            padding: 10px;
+            font-size: 16px;
+            width: 220px;
+            margin-right: 10px;
+        }
+        #searchButton {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #searchButton:hover {
+            background-color: #45a049;
+        }
+        .search-results {
+            margin-top: 20px;
+            color: black;
+            margin-bottom: 20px;
+        }
+        main {
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            display: none; /* Initially hidden */
+            overflow: auto;
+            max-height: 400px;
+            border: 1px solid #ddd;
+            background-color: white;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .fun-facts {
+            font-weight: bold;
+            margin: 30px 0;
+        }
+        #animalPhoto {
+            display: none;
+            max-width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Extinction of Reptiles</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="reptiles.html">Reptiles</a></li>
+                <li><a href="mammals.html">Mammals</a></li>
+                <li><a href="amphibians.html">Amphibians</a></li>
+                <li><a href="aerial.html">Aerial Animals</a></li>
+            </ul>
+        </nav>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
+            <button id="searchButton">Search</button>
+        </div>
+
+        <div class="search-results" id="searchResults"></div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Fun Facts about Reptiles</h2>
+            <p class="fun-facts">
+                Reptiles were among the first animals to adapt to land life, with some even returning to the ocean like sea turtles!
+            </p>
+        </section>
+
+        <section>
+            <h3>Examples of Extinct and Endangered Reptiles</h3>
+            <table id="reptileTable">
+                <tr>
+                    <th>Original Name</th>
+                    <th>Scientific Name</th>
+                    <th>Category</th>
+                    <th>Conservation Status</th>
+                    <th>Estimated Risk of Extinction (%)</th>
+                    <th>Comfortable Habitat</th>
+                    <th>Original Home Area</th>
+                </tr>
+                <tr>
+                    <td><a href="#" class="animal-link" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWPMsYaEr-sZBrbShf-_1fclGuCFdHR3ga8g&s">Komodo Dragon</a></td>
+                    <td>Varanus komodoensis</td>
+                    <td>Reptile</td>
+                    <td>Endangered</td>
+                    <td>70%</td>
+                    <td>Tropical forests, savannas</td>
+                    <td>Indonesia</td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="animal-link" data-image="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTVo2Z7dnRvda5nZsPZfYd-m8xYX8QpuamJe06K-bQELKWmkJhs">Tuatara</a></td>
+                    <td>Sphenodon punctatus</td>
+                    <td>Reptile</td>
+                    <td>Endangered</td>
+                    <td>60%</td>
+                    <td>Forest</td>
+                    <td>New Zealand</td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="animal-link" data-image="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRg2xzXm2NFW7ygHwnjGBIJPZWG6YUo6IPvCMwhxIx-zEamnse06NpJ8T-2x-BAeOtA86kQF2OTPMEkq-Yr12MSnfe7u7BAGs1UjK3kWCM">Hawksbill Turtle</a></td>
+                    <td>Eretmochelys imbricata</td>
+                    <td>Reptile</td>
+                    <td>Critically Endangered</td>
+                    <td>85%</td>
+                    <td>Tropical coral reefs</td>
+                    <td>Worldwide (tropical regions)</td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="animal-link" data-image="https://static.wikia.nocookie.net/fc47a6b6-1a7f-4a78-9a68-1c619861f12e/scale-to-width/755">Pleistocene Crocodile</a></td>
+                    <td>Deinosuchus</td>
+                    <td>Reptile</td>
+                    <td>Extinct</td>
+                    <td>N/A</td>
+                    <td>Rivers, lakes</td>
+                    <td>North America</td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="animal-link" data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTexVdXqL7pHo5aMIKZIE5zI3JsFcQGjEFRmw&s">Icarus Lizard</a></td>
+                    <td>Leiolopisma</td>
+                    <td>Reptile</td>
+                    <td>Extinct</td>
+                    <td>N/A</td>
+                    <td>Forest</td>
+                    <td>New Zealand</td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="animal-link" data-image="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Giant_Tortoise.JPG/1200px-Giant_Tortoise.JPG">Elephant Tortoise</a></td>
+                    <td>Geochelone gigantea</td>
+                    <td>Reptile</td>
+                    <td>Endangered</td>
+                    <td>90%</td>
+                    <td>Tropical forests</td>
+                    <td>Seychelles</td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="animal-link" data-image="https://example.com/madagascar-crocodile.jpg">Madagascar Crocodile</a></td>
+                    <td>Osteolaemus tetraspis</td>
+                    <td>Reptile</td>
+                    <td>Endangered</td>
+                    <td>75%</td>
+                    <td>Freshwater swamps</td>
+                    <td>Madagascar</td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="animal-link" data-image="https://example.com/javan-tiger.jpg">Javan Tiger</a></td>
+                    <td>Panthera tigris sondaica</td>
+                    <td>Mammal</td>
+                    <td>Extinct</td>
+                    <td>N/A</td>
+                    <td>Tropical forests</td>
+                    <td>Java, Indonesia</td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="animal-link" data-image="https://example.com/gotterdammerung-lizard.jpg">Gotterdammerung Lizard</a></td>
+                    <td>Giant Lizard</td>
+                    <td>Reptile</td>
+                    <td>Extinct</td>
+                    <td>N/A</td>
+                    <td>Tropical forests</td>
+                    <td>Caribbean</td>
+                </tr>
+            </table>
+        </section>
+
+        <img id="animalPhoto" src="" alt="Animal Photo">
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Extinct Animals</p>
+    </footer>
+
+    <script>
+        document.getElementById('reptileTable').style.display = 'table';
+
+        const animalLinks = document.querySelectorAll('.animal-link');
+        animalLinks.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const imgSrc = this.getAttribute('data-image');
+                const animalPhoto = document.getElementById('animalPhoto');
+                animalPhoto.src = imgSrc;
+                animalPhoto.style.display = 'block';
+            });
+        });
+
+        const searchButton = document.getElementById('searchButton');
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+
+        searchButton.addEventListener('click', function() {
+            const query = searchInput.value.toLowerCase();
+            const results = [];
+
+            animalLinks.forEach(link => {
+                const name = link.textContent.toLowerCase();
+                if (name.includes(query)) {
+                    results.push(link.textContent);
+                }
+            });
+
+            searchResults.innerHTML = results.length > 0 ? `Results: ${results.join(', ')}` : 'No results found';
+        });
+    </script>
+</body>
+</html>

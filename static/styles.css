@@ -1,0 +1,221 @@
+/* General reset and box sizing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffffff; /* White background */
+    color: #000000; /* Black text color */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Header with darker overlay */
+header {
+    background-image: url('https://as1.ftcdn.net/v2/jpg/03/37/16/66/1000_F_337166618_CAmNE9KvQGIAUUMxlLDtbnWHlN7qfOah.jpg');
+    background-attachment: fixed; /* Parallax effect */
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1; /* Place behind the text */
+}
+
+header h1 {
+    font-size: 3em;
+    position: relative;
+    z-index: 2;
+    font-weight: bold;
+    color: #f0f0f0;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Soft text shadow */
+}
+
+.tagline {
+    font-size: 1.4em;
+    position: relative;
+    z-index: 2;
+    font-style: italic;
+    color: #e0e0e0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* Search Container */
+.search-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.search-container input {
+    padding: 12px;
+    width: 240px;
+    border: 2px solid #4CAF50;
+    border-radius: 30px;
+    background: rgb(0, 0, 0);
+    color: #fff;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.search-container input:focus {
+    box-shadow: 0 4px 8px rgba(0, 255, 0, 0.5);
+    outline: none;
+}
+
+.search-container button {
+    padding: 12px 20px;
+    margin-left: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #3e8e41;
+    transform: translateY(-3px);
+}
+
+/* Main Section */
+.main-section {
+    background: rgba(255, 255, 255, 0.1);
+    margin: 30px auto;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    width: 80%;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.main-section:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Animal image styling */
+#animalPhoto {
+    display: none;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Animal info styling */
+#animalInfo {
+    display: none;
+    margin-top: 10px;
+    font-size: 16px;
+    font-style: italic;
+}
+
+/* Table for Mammal Information */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    border: 1px solid #ddd;
+    overflow: auto;
+    max-height: 400px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Fun facts section */
+.fun-facts {
+    font-weight: bold;
+    margin: 30px 0;
+}
+
+.search-results {
+    margin-top: 20px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+/* Section divider */
+.section-divider {
+    height: 4px;
+    background: linear-gradient(90deg, #4CAF50, #81c784);
+    border-radius: 50px;
+    margin: 30px 0;
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4CAF50;
+    border-radius: 5px;
+}

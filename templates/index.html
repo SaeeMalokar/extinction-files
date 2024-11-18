@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata and linking stylesheet for styling -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Extinction Files</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        /* Inline CSS for styling category items and search results */
+        .category-item {
+            display: inline-block;
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            line-height: 150px;
+            font-size: 18px;
+            text-decoration: none;
+        }
+        .search-results {
+            margin-top: 20px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section: Title, Navigation, and Search Bar -->
+    <header>
+        <div class="container">
+            <h1>The Extinction Files</h1>
+            <p class="tagline">Raising Awareness: The Plight of Endangered and Extinct Animals.</p>
+            <!-- Navigation links to different sections of the site -->
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="{{ url_for('static', filename='about.html') }}">About</a></li>
+                    <li><a href="{{ url_for('static', filename='contact.html') }}">Contact</a></li>
+                    <li><a href="{{ url_for('static', filename='login.html') }}">Login</a></li>
+                </ul>
+            </nav>
+        <!-- Search input and button for searching animals -->
+<div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search..." aria-label="Search">
+    <button id="searchButton">Search</button>
+</div>
+
+<!-- Search results will be displayed here -->
+<div class="search-results" id="searchResults"></div>
+
+            <!-- Container for displaying search results -->
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="container">
+        <!-- Introduction Section -->
+        <section id="home" class="main-section">
+            <h2>Welcome</h2>
+            <div class="section-divider"></div>
+            <p>Explore the fascinating world of extinct animals and learn about their history and impact on our planet.</p>
+        </section>
+
+        <!-- Fun Facts Section -->
+        <section id="fun-facts" class="main-section">
+            <h2>Fun Facts</h2>
+            <div class="section-divider"></div>
+            <ul>
+                <!-- List of interesting facts about extinct animals -->
+                <li>The woolly mammoth was around 13 feet tall!</li>
+                <li>Some species of dodo birds were flightless.</li>
+                <li>The passenger pigeon was once the most common bird in North America.</li>
+                <li>Neanderthals lived in Europe until about 40,000 years ago.</li>
+                <li>The Tasmanian tiger, or thylacine, was declared extinct in the 20th century.</li>
+            </ul>
+        </section>
+
+        <!-- Animal Categories Section -->
+        <section id="categories" class="main-section">
+            <h2>Explore Categories</h2>
+            <div class="section-divider"></div>
+            <div class="category-list">
+                <!-- Each category links to specific pages with background images as icons -->
+                <a href="{{ url_for('static', filename='mammals.html') }}" class="category-item" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBRmj3_Z9tAvUlPv0ED8RdWpA3Jcif6o-ikQ&s');">
+                    <span>Mammals</span>
+                </a>
+                <a href="{{ url_for('static', filename='amphibians.html') }}" class="category-item" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDzLY8RH1SagSygi_gZxIzWVhh-1iJaNd0Qg&s');">
+                    <span>Amphibians</span>
+                </a>
+                <!-- Additional categories with images and links -->
+                <a href="{{ url_for('static', filename='reptiles.html') }}" class="category-item" style="background-image: url('https://cdn.britannica.com/45/257745-050-CDFED3A7/freshwater-crocodile-Crocodylys-johnsoni-with-jaw-open.jpg?w=300');">
+                    <span>Reptiles</span>
+                </a>
+                <a href="{{ url_for('static', filename='aerial.html') }}" class="category-item" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmMlsdvkuhBw9dDOMNiAV9BZAWVT1GEcTEZA&s');">
+                    <span>Aerial animals</span>
+                </a>
+                <a href="{{ url_for('static', filename='phylum.html') }}" class="category-item" style="background-image: url('https://media.istockphoto.com/id/1530912046/photo/vermillion-star.jpg?s=612x612&w=0&k=20&c=vvaPJrQXf2FH--9ldJs0_R5mJIcgd5iezIqsTRUvcko=');">
+                    <span>Echinodermata</span>
+                </a>
+                <a href="{{ url_for('static', filename='inverteberates.html') }}" class="category-item" style="background-image: url('https://www.thoughtco.com/thmb/p4WoO_Wo-fu59zUwT9FOaKhIOTI=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/shutterstock_504747-56a006f45f9b58eba4ae8c6b.jpg');">
+                    <span>Invertebrates</span>
+                </a>
+                <a href="{{ url_for('static', filename='marsupials.html') }}" class="category-item" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuQSFl6GUxOfOSqvE8Tc9Zo9O6ExRXfuVFIw&s');">
+                    <span>Marsupials</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section with email link -->
+        <section id="contact" class="main-section">
+            <h2>Contact Us</h2>
+            <div class="section-divider"></div>
+            <p>You can reach us at <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">info@extinctanimals.org</a>.</p>
+        </section>
+    </main>
+
+    <!-- Footer with copyright -->
+    <footer>
+        <p>&copy; 2024 The Extinction Files</p>
+    </footer>
+
+    <script>
+        // Sample data for the animals used in the search functionality
+        const animals = [
+            { name: "Woolly Mammoth", link: "{{ url_for('static', filename='mammals.html') }}" },
+            { name: "Dodo Bird", link: "{{ url_for('static', filename='amphibians.html') }}" },
+            { name: "Passenger Pigeon", link: "{{ url_for('static', filename='reptiles.html') }}" },
+            { name: "Neanderthals", link: "{{ url_for('static', filename='ariel.html') }}" },
+            { name: "Tasmanian Tiger", link: "{{ url_for('static', filename='marsupials.html') }}" }
+        ];
+
+        // Search functionality triggered on button click
+        document.getElementById('searchButton').addEventListener('click', function() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const results = animals.filter(animal => animal.name.toLowerCase().includes(input));
+            displayResults(results); // Call displayResults with filtered results
+        });
+
+        // Function to display search results in the HTML
+        function displayResults(results) {
+            const resultsContainer = document.getElementById('searchResults');
+            resultsContainer.innerHTML = ''; // Clear previous results
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<p>No results found.</p>'; // Message if no results
+            } else {
+                results.forEach(animal => {
+                    // Create a link for each result and append to the results container
+                    const link = document.createElement('a');
+                    link.href = animal.link;
+                    link.textContent = animal.name;
+                    resultsContainer.appendChild(link);
+                    resultsContainer.appendChild(document.createElement('br')); // Add a line break after each link
+                });
+            }
+        }
+    </script>
+</body>
+</html>
